@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 722px;
+    width: 722px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+}
+.title {
+    margin-top: 35px;
+    text-align: center;
+    font-size: 50px;
+}
+.selector {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.reset-button {
+    margin-top: 10px;
+    margin-left: 49%;
+    margin-right: 51%;
+}
+.reset {
+    font-size: 20px;
+    padding: 2px;
+}
