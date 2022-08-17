@@ -10,6 +10,14 @@ for (let i = 0; i < 16; i++)
         container.appendChild(cell);
     }
 
+// RANDOM RGB COLOR
+function randomRGB() {
+    const R = Math.floor(Math.random() * 256);
+    const G = Math.floor(Math.random() * 256);
+    const B = Math.floor(Math.random() * 256);
+    return `rgb(${R}, ${G}, ${B})`;
+}
+
 // BEGIN DRAWING
 const begin = document.querySelector('.begin');
 begin.addEventListener('click', function() {
@@ -17,7 +25,17 @@ begin.addEventListener('click', function() {
     const grid = document.querySelectorAll('.cell');
     grid.forEach(cell => cell.addEventListener('mouseover', function(e) {
         if (!STOP)
-            e.target.style.backgroundColor = "gray";
+            if (!e.target.style.backgroundColor) {
+                e.target.style.backgroundColor = randomRGB();
+                e.target.value = 100;
+            }
+            else {
+                const now = e.target.value - 10;
+                if (now >= 0) {
+                    e.target.style.filter = `brightness(${now}%)`; 
+                    e.target.value = now;
+                }
+            }
     }));
 });
 
